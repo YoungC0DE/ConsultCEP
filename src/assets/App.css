@@ -5,20 +5,26 @@
 }
 
 nav {
-    display: flex;
-    align-content: center;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav form {
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     width: 50%;
+    height: 100%;
+}
+
+nav form input {
+    width: 50% !important;
 }
 
 nav span {
-    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,11 +59,16 @@ section {
     justify-content: space-between;
 }
 
-.duo-blocks input {
+.duo-blocks div,
+.three-blocks div {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.three-blocks input {
+.three-blocks input,
+.duo-blocks input {
     width: 90%;
 }
 
