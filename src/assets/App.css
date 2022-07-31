@@ -77,3 +77,17 @@ section {
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 600px) {
+    nav form {
+        width: 100%;
+    }
+
+    nav form button, nav form span  {
+        width: 20%;
+    }
+    section {
+        width: 95%;
+        padding: 40px 10px;
+    }
+}

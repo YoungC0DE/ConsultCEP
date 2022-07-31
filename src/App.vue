@@ -5,7 +5,7 @@
       <span class="text-white">Informe um CEP:</span>
       <input id="cep" class="form-control me-2" type="search" placeholder="Ex: 12345-678" v-maska="'#####-###'"
         aria-label="Search" v-model="Dados.cep">
-      <button class="btn btn-outline-success" type="submit" v-on:click.prevent="consult">Consultar <i
+      <button class="btn btn-outline-success" type="submit" v-on:click.prevent="consult">{{screenUser > 600 ? 'Consultar' : ''}} <i
           class="bi bi-search"></i></button>
     </form>
   </nav>
@@ -90,7 +90,8 @@ import { maska } from 'maska'
 export default {
   data() {
     return {
-      Dados: {}
+      Dados: {},
+      screenUser: window.innerWidth
     }
   },
   directives: { maska },
