@@ -1,117 +1,192 @@
 <template>
-
-  <nav class="bg-dark">
-    <form class="d-flex" role="search">
-      <span class="text-white">Informe um CEP:</span>
-      <input id="cep" class="form-control me-2" type="search" placeholder="Ex: 12345-678" v-maska="'#####-###'"
-        aria-label="Search" v-model="Dados.cep">
-      <button class="btn btn-outline-success" type="submit" v-on:click.prevent="consult">{{screenUser > 600 ? 'Consultar' : ''}} <i
-          class="bi bi-search"></i></button>
-    </form>
-  </nav>
-
   <main>
-    <section>
-      <div class="duo-blocks">
+    <div
+      class="d-flex flex-column align-items-center justify-content-center gap-2"
+    >
+      <nav class="bg-dark">
+        <span class="text-white">Informe o CEP:</span>
+        <input
+          id="cep"
+          class="form-control"
+          type="search"
+          placeholder="Ex: 12345-678"
+          v-maska="'#####-###'"
+          required
+          autofocus
+          autocomplete="off"
+          v-model="CEP"
+        />
+        <button
+          class="btn btn-outline-success"
+          type="button"
+          v-on:click="consult"
+        >
+          Consultar
+        </button>
+      </nav>
+
+      <section>
         <div>
           Logradouro
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="Logradouro"
-            v-model="Dados.logradouro" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="Logradouro"
+            v-model="apiData.logradouro"
+            readonly
+          />
         </div>
 
         <div>
           Complemento
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="Complemento"
-            v-model="Dados.complemento" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="Complemento"
+            v-model="apiData.complemento"
+            readonly
+          />
         </div>
-      </div>
 
-      <div class="duo-blocks">
         <div>
           Bairro
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="Bairro"
-            v-model="Dados.bairro" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="Bairro"
+            v-model="apiData.bairro"
+            readonly
+          />
         </div>
 
         <div>
           Localidade
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="Localidade"
-            v-model="Dados.localidade" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="Localidade"
+            v-model="apiData.localidade"
+            readonly
+          />
         </div>
-      </div>
 
-      <div class="duo-blocks">
         <div>
           UF
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="UF"
-            v-model="Dados.uf" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="UF"
+            v-model="apiData.uf"
+            readonly
+          />
         </div>
 
         <div>
           IBGE
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="IBGE"
-            v-model="Dados.ibge" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="IBGE"
+            v-model="apiData.ibge"
+            readonly
+          />
         </div>
-      </div>
 
-
-      <div class="three-blocks">
         <div>
           GIA
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="GIA"
-            v-model="Dados.gia" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="GIA"
+            v-model="apiData.gia"
+            readonly
+          />
         </div>
 
         <div>
           DDD
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="DDD"
-            v-model="Dados.ddd" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="DDD"
+            v-model="apiData.ddd"
+            readonly
+          />
         </div>
 
         <div>
           SIAFI
-          <input type="text" class="form-control" aria-label="Sizing example input" placeholder="-----" id="SIAFI"
-            v-model="Dados.siafi" readonly>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="-----"
+            id="SIAFI"
+            v-model="apiData.siafi"
+            readonly
+          />
         </div>
-      </div>
-
-    </section>
+      </section>
+    </div>
+    <footer class="d-flex flex-column align-items-center">
+      <span>
+        Developer by
+        <a href="https://github.com/YoungC0DE" class="text-decoration-none"
+          >Rafael Anjos</a
+        >
+      </span>
+      <span>YoungC0DE</span>
+    </footer>
   </main>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25061235.470727414!2d-53.29014935068654!3d-14.970935823514925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9c59c7ebcc28cf%3A0x295a1506f2293e63!2sBrasil!5e0!3m2!1spt-BR!2sbr!4v1659142100472!5m2!1spt-BR!2sbr"
-    width="100%" height="300" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
 </template>
 
 <script>
-import axios from 'axios'
-import { maska } from 'maska'
+import axios from "axios";
+import { maska } from "maska";
+import Swal from "sweetalert2";
 
 export default {
   data() {
     return {
-      Dados: {},
-      screenUser: window.innerWidth
-    }
+      apiData: {},
+      CEP: null,
+      screenUser: window.innerWidth,
+    };
   },
   directives: { maska },
   methods: {
     consult() {
-      console.log(this.cep)
+      if (this.CEP == null || this.CEP.length < 9) {
+        Swal.fire({
+          title: "CEP inválido",
+          text: "Informe um CEP para que possamos prosseguir.",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
+        return;
+      }
       axios
-        .get(`https://viacep.com.br/ws/${this.Dados.cep}/json`)
+        .get(`https://viacep.com.br/ws/${this.CEP}/json`)
         .then(({ data }) => {
-          this.Dados.bairro = data.bairro
-          this.Dados.logradouro = data.logradouro
-          this.Dados.complemento = data.complemento
-          this.Dados.localidade = data.localidade
-          this.Dados.uf = data.uf
-          this.Dados.ibge = data.ibge
-          this.Dados.gia = data.gia
-          this.Dados.ddd = data.ddd
-          this.Dados.siafi = data.siafi
-        })
-    }
-  }
-}
+          if (data.erro == true) {
+            Swal.fire({
+              title: "CEP Não encontrado",
+              text: "Não encontramos o cep informado, tente novamente com um cep válido.",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
+            return;
+          }
+          this.apiData = data;
+        });
+    },
+  },
+};
 </script>

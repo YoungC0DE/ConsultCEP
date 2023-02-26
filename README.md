@@ -1,29 +1,22 @@
 # ConsultCEP
 
-This template should help get you started developing with Vue 3 in Vite.
+This project was made using the viacep API, in which it is possible to query information from zip codes throughout Brazil.
 
-## Recommended IDE Setup
+Languages and Tecnologies:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- HTML5,
+- CSS3,
+- Javascript,
+- Vuejs,
+- Swal,
+- Boostrap.
 
-## Customize configuration
+##
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+<div align='center'>
+  
+See the project here: [ConsultCEP](https://consult-cep-black.vercel.app/).
+ 
+<img src="https://user-images.githubusercontent.com/68437256/221276272-24b8fe69-6ea2-4e11-b715-82970d4b72ca.png" width="500">
+  
+</div>
