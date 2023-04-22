@@ -17,6 +17,6 @@ Languages and Tecnologies:
   
 See the project here: [ConsultCEP](https://consult-cep-black.vercel.app/).
 
-<img src="https://user-images.githubusercontent.com/68437256/221388234-5c0c86fb-6e38-473a-a68e-c4f5a918e7b6.png" width="500">
+<img src="https://user-images.githubusercontent.com/68437256/233806331-07ad28e8-c274-478d-8fab-2cdae20bdc7b.png" width="500">
   
 </div>
