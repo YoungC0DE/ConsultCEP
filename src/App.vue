@@ -63,7 +63,7 @@
     </div>
     <footer class="d-flex flex-column align-items-center">
       <span>
-        Developer by
+        Developed by
         <a href="https://github.com/YoungC0DE" class="text-decoration-none">Rafael Anjos</a>
       </span>
       <span>YoungC0DE</span>
