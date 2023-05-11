@@ -15,7 +15,7 @@ Languages and Tecnologies:
 
 <div align='center'>
   
-See the project here: [ConsultCEP](https://consult-cep-black.vercel.app/).
+See the project here: [ConsultCEP](https://fast-consult-cep.vercel.app/).
 
 <img src="https://user-images.githubusercontent.com/68437256/233806331-07ad28e8-c274-478d-8fab-2cdae20bdc7b.png" width="500">
   
